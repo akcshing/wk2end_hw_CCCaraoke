@@ -11,6 +11,9 @@ class TestPlaylist < MiniTest::Test
 
     @playlist_1 = Playlist.new
 
+    @playlist_2 = Playlist.new
+    @playlist_2.add_song(@song_1)
+    @playlist_2.add_song(@song_2)
   end
 
   def test_get_song_list
@@ -23,7 +26,8 @@ class TestPlaylist < MiniTest::Test
   end
 
   def test_play_next_song
-    assert_equal(@song_1, @playlist_1.play_next) #returns song, pops array
-    assert_equal([@song_2], @playlist.song_list)
+
+    assert_equal(@song_1, @playlist_2.play_next) #returns song, pops array
+    assert_equal([@song_2], @playlist_2.song_list)
   end
 end

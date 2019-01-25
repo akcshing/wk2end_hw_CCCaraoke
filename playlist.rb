@@ -1,3 +1,5 @@
+require("pry")
+
 class Playlist
   attr_reader :song_list
 
@@ -9,5 +11,9 @@ class Playlist
     @song_list << song
   end
 
+  def play_next
+    @song_list.shift # removes first value and returns it
+    # binding.pry
+  end
 
 end
