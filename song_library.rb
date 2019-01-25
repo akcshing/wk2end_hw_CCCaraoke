@@ -3,6 +3,7 @@ class Song_Library
 
   def initialize(starting_library =[])
     @library = starting_library
+    @filter_results = nil
   end
 
   def find_song(song_title, song_artist)
@@ -11,7 +12,8 @@ class Song_Library
   end
 
   def filter_by(filter_search)
-    filter_results = @library.find_all{|song| song.title.include?(filter_search) || song.artist.include?(filter_search)}
-    return filter_results
+    @filter_results = @library.find_all{|song| song.title.include?(filter_search) || song.artist.include?(filter_search)}
   end
+
+
 end
