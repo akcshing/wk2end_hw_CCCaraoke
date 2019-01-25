@@ -40,10 +40,6 @@ class TestRoom < MiniTest::Test
   end
 
 
-  # def test_add_song_from_song_list_to_playlist
-  #   @room_2.add_song_to_playlist("Always", "blink-182")
-  #   assert_equal(@song_4, @room_2.playlist[0])
-  # end
 
 
   #
@@ -53,15 +49,15 @@ class TestRoom < MiniTest::Test
   #   assert_equal(@song_1, @room_2.current_song)
   # end
   #
-  # def test_count_guests__empty
-  #   assert_equal([], @room_2.guests)
-  # end
+  def test_count_guests__empty
+    assert_equal([], @room_2.guests)
+  end
 
-  # def test_check_in_guests
-  #   @room_2.check_in(@guest_1)
-  #   @room_2.check_in(@guest_3)
-  #   assert_equal(2, @room_2.guests.count)
-  # end
+  def test_check_in_guests
+    @room_2.check_in(@guest_1)
+    @room_2.check_in(@guest_3)
+    assert_equal(2, @room_2.guests.count)
+  end
 
   # def test_check_out_guests
   #

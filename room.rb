@@ -15,7 +15,7 @@ class Room
   end
 
   def check_in(guest)
-    @guests = guest
+    @guests << guest
   end
 
 end
