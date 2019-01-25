@@ -14,7 +14,9 @@ class Guest
     end
   end
 
-
+  def sing
+    return "La la laaaa..."
+  end
 
 
 
