@@ -8,5 +8,15 @@ class Guest
     @money = money
   end
 
+  def see_fav(playlist)
+    if playlist.include?(@fav) == true
+      return "Oh my days! #{@fav.title} is my JAM!"
+    end
+  end
+
+
+
+
+
 
 end
