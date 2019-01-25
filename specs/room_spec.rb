@@ -4,6 +4,7 @@ require_relative("../guest")
 require_relative("../song")
 require_relative("../playlist")
 require_relative("../room")
+require_relative("../song_library")
 
 class TestRoom < MiniTest::Test
 
@@ -23,7 +24,7 @@ class TestRoom < MiniTest::Test
     @playlist.add_song(@song_2)
     @playlist.add_song(@song_3)
 
-    @song_list = [@song_1, @song_2, @song_3, @song_4]
+    @song_list = Song_Library.new([@song_1, @song_2, @song_3, @song_4])
 
     @guests = [@guest_1, @guest_2, @guest_3]
     # @room_1 = Room.new(@guests, 6, @playlist, @song_list)  # removing guests parameter
@@ -38,18 +39,13 @@ class TestRoom < MiniTest::Test
     assert_equal(@song_list, @room_2.song_list)
   end
 
-  def test_find_song_in_song_list
-    assert_equal(@song_4, @room_2.find_song("Always", "blink-182"))
-  end
 
   # def test_add_song_from_song_list_to_playlist
   #   @room_2.add_song_to_playlist("Always", "blink-182")
   #   assert_equal(@song_4, @room_2.playlist[0])
   # end
 
-  # def test_add_song_to_room
-  #
-  # end
+
   #
   # def test_play_next_song_in_playlist
   #        # @room_2.add_song("Sunflower", "Post Malone, Swae Lee")
