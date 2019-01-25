@@ -15,10 +15,10 @@ class Guest
   end
 
   def sing
-    return "La la laaaa..."
+    @skills == true ? "La la laaaa..." : "Screeeeeech!..."
   end
 
-
+  
 
 
 end

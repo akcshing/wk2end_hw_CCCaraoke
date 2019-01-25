@@ -37,4 +37,13 @@ class TestGuest < MiniTest::Test
     assert_equal("La la laaaa...", @guest_1.sing)
     assert_equal("Screeeeeech!...", @guest_2.sing)
   end
+
+  def test_pay_fee__reduce_money
+    @guest_1.pay_fee(10)
+    assert_equal(90, @guest_1.money)
+  end
+
+  def test_pay_fee__returns_fee_integer
+    assert_equal(10, @guest.pay_fee(10))
+  end
 end
