@@ -18,6 +18,10 @@ class Room
     @guests << guest
   end
 
+  def check_out(guest)
+    @guests.delete(guest)
+  end
+
 end
 
 # def find_song(song_title, song_artist)
