@@ -26,7 +26,7 @@ class TestGuest < MiniTest::Test
   end
 
   def test_guest_see_fav
-    assert_equal("Oh my days! On Melancholy Hill is my JAM!", @guest_1.see_fav(@playlist.song_list))
+    assert_equal("Oh my days! On Melancholy Hill is my JAM!", @guest_1.see_fav(@playlist.song_queue))
   end
 
   def test_guest_can_sing

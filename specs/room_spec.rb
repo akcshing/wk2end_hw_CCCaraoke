@@ -18,10 +18,10 @@ class TestRoom < MiniTest::Test
     @guest_2 = Guest.new("Stacey", true, @song_2, 20)
     @guest_3 = Guest.new("Michael", false, @song_3, 40)
 
-    # @playlist = Playlist.new
-    # @playlist.add_song(@song_1)
-    # @playlist.add_song(@song_2)
-    # @playlist.add_song(@song_3)
+    @playlist = Playlist.new
+    @playlist.add_song(@song_1)
+    @playlist.add_song(@song_2)
+    @playlist.add_song(@song_3)
 
     @song_list = [@song_1, @song_2, @song_3, @song_4]
 
@@ -38,20 +38,28 @@ class TestRoom < MiniTest::Test
     assert_equal(@song_list, @room_2.song_list)
   end
 
-  def test_add_song_from_song_list_to_playlist
-    @room_2.add_song("Always", "blink-182")
-    assert_equal(@song_4, @room_2.playlist[0])
+  def test_find_song_in_song_list
+    assert_equal(@song_4, @room_2.find_song("Always", "blink-182"))
   end
 
-  # def test_play_next_song_in_playlist
-  #   @room_2.add_song(@song_1)
-  #   @room_2.play_next
-  #   assert_equal(@song_1, @room_2.current_song)
+  # def test_add_song_from_song_list_to_playlist
+  #   @room_2.add_song_to_playlist("Always", "blink-182")
+  #   assert_equal(@song_4, @room_2.playlist[0])
   # end
 
-  def test_count_guests__empty
-    assert_equal([], @room_2.guests)
-  end
+  # def test_add_song_to_room
+  #
+  # end
+  #
+  # def test_play_next_song_in_playlist
+  #        # @room_2.add_song("Sunflower", "Post Malone, Swae Lee")
+  #   @room_2.play_next(@playlist)
+  #   assert_equal(@song_1, @room_2.current_song)
+  # end
+  #
+  # def test_count_guests__empty
+  #   assert_equal([], @room_2.guests)
+  # end
 
   # def test_check_in_guests
   #   @room_2.check_in(@guest_1)
