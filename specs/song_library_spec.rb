@@ -29,17 +29,22 @@ class TestSongLibrary < MiniTest::Test
   end
 
   def test_filter
-    assert_equal([@song_1, @song_2, @song_3], @song_library.filter_by("ee"))
+    @song_library.filter_by("ee")
+    assert_equal([@song_1, @song_2, @song_3], @song_library.filter_results)
   end
 
   def test_add_song_to_library
-    # assert_equal()
+    @song_library.add_song(@song_5)
+    assert_equal(@song_5, @song_library.library.last)
   end
 
   def test_sort_library__by_artist__a_to_z
+    @song_library.sort_title_az
+    assert_equal(@song_1, @song_library.sorted_results.last)
   end
 
   def test_sort_library__by_artist__z_to_a
+
   end
 
   def test_sort_library__by_title__a_to_z

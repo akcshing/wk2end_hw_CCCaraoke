@@ -1,9 +1,10 @@
 class Song_Library
-  attr_reader :library
+  attr_reader :library, :filter_results, :sorted_results
 
   def initialize(starting_library =[])
     @library = starting_library
     @filter_results = nil
+    @sorted_results = nil
   end
 
   def find_song(song_title, song_artist)
@@ -15,5 +16,11 @@ class Song_Library
     @filter_results = @library.find_all{|song| song.title.include?(filter_search) || song.artist.include?(filter_search)}
   end
 
+  def add_song(song)
+    @library << song
+  end
 
+  def sort_title_az
+    @sorted_results = @library.sort_by{|song| song.title.downcase}
+  end
 end
