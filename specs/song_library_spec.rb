@@ -38,20 +38,21 @@ class TestSongLibrary < MiniTest::Test
     assert_equal(@song_5, @song_library.library.last)
   end
 
-  def test_sort_library__by_artist__a_to_z
+  def test_sort_library__by_title__a_to_z
     @song_library.sort_title_az
     assert_equal(@song_1, @song_library.sorted_results.last)
   end
 
-  def test_sort_library__by_artist__z_to_a
+  def test_sort_library__by_title__z_to_a
     @song_library.sort_title_za
     assert_equal(@song_4, @song_library.sorted_results.last)
   end
 
-  def test_sort_library__by_title__a_to_z
+  def test_sort_library__by_artist__a_to_z
+
   end
 
-  def test_sort_library__by_title__z_to_a
+  def test_sort_library__by_artist__z_to_a
   end
 
 
