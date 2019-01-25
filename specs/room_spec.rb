@@ -25,7 +25,7 @@ class TestRoom < MiniTest::Test
 
     @guests = [@guest_1, @guest_2, @guest_3]
     @room_1 = Room.new(@guests, 6, @playlist)
-
+    @room_2 = Room.new([], 4, @playlist)
   end
 
   def test_getters
@@ -38,5 +38,16 @@ class TestRoom < MiniTest::Test
     @room_1.play_next
     assert_equal(@song_1, @room_1.current_song)
   end
-  
+
+  def test_check_in_guests
+
+  end
+
+  def test_check_out_guests
+
+  end
+
+  def test_add_song_to_song_list
+
+  end
 end
