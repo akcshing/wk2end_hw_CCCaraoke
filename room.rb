@@ -24,8 +24,8 @@ class Room
     @current_song = playlist.play_next
   end
 
-  def check_in
-    @guests
+  def check_in(guest)
+    @guests = guest
   end
 
 end
