@@ -23,4 +23,8 @@ class Song_Library
   def sort_title_az
     @sorted_results = @library.sort_by{|song| song.title.downcase}
   end
+
+  def sort_title_za
+    @sorted_results = @library.sort_by{|song| song.title.downcase}.reverse
+  end
 end
