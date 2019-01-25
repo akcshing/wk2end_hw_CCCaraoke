@@ -56,20 +56,15 @@ class TestRoom < MiniTest::Test
     assert_equal(1, @room_2.guests.count)
     assert_equal([@guest_3], @room_2.guests)
   end
-  #
-  # def test_add_song_to_song_list
-  #
-  # end
-  #
-  # def test_find_song_in_song_list
-  #
-  # end
+
+  def test_play_next_song_in_playlist
+    @room_2.play_next(@playlist)
+    assert_equal(@song_1, @room_2.current_song)
+  end
+
+
 end
 
 #
-# def test_play_next_song_in_playlist
-#        # @room_2.add_song("Sunflower", "Post Malone, Swae Lee")
-#   @room_2.play_next(@playlist)
-#   assert_equal(@song_1, @room_2.current_song)
-# end
+#
 #
