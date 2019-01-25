@@ -15,4 +15,7 @@ class TestSong < MiniTest::Test
     assert_equal("Tongues", @song_1.title)
   end
 
+  def test_play_song
+    assert_equal("Tongues intro...", @song_1.play_song)
+  end
 end
