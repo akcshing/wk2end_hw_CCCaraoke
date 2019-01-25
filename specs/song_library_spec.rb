@@ -49,10 +49,13 @@ class TestSongLibrary < MiniTest::Test
   end
 
   def test_sort_library__by_artist__a_to_z
-
+    @song_library.sort_artist_az
+    assert_equal(@song_2, @song_library.sorted_results.last)
   end
 
   def test_sort_library__by_artist__z_to_a
+    @song_library.sort_artist_za
+    assert_equal(@song_4, @song_library.sorted_results.last)
   end
 
 
