@@ -7,7 +7,7 @@ class Playlist
     @song_list = []
   end
 
-  def add_song(song)
+  def add_song(song)  # can i modify with splat to accept multiple songs?
     @song_list << song
   end
 
