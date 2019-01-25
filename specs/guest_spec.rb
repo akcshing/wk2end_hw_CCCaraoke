@@ -14,6 +14,7 @@ class TestGuest < MiniTest::Test
     @playlist.add_song(@song_1)
 
     @guest_1 = Guest.new("Alex", true, @song_1, 100)
+    @guest_2 = Guest.new("Jim", false, @song_1, 100)
 
   end
 
@@ -31,5 +32,9 @@ class TestGuest < MiniTest::Test
   def test_guest_can_sing
     assert_equal("La la laaaa...", @guest_1.sing)
   end
-  
+
+  def test_guest_can_sing__well?
+    assert_equal("La la laaaa...", @guest_1.sing)
+    assert_equal("Screeeeeech!...", @guest_2.sing)
+  end
 end
