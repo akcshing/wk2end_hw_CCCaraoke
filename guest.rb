@@ -18,7 +18,10 @@ class Guest
     @skills == true ? "La la laaaa..." : "Screeeeeech!..."
   end
 
-  
+  def pay_fee(amount)
+    @money -= amount
+    return amount
+  end
 
 
 end

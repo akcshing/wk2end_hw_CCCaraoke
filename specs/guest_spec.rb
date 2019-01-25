@@ -44,6 +44,6 @@ class TestGuest < MiniTest::Test
   end
 
   def test_pay_fee__returns_fee_integer
-    assert_equal(10, @guest.pay_fee(10))
+    assert_equal(10, @guest_1.pay_fee(10))
   end
 end
