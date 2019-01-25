@@ -19,6 +19,6 @@ class TestPlaylist < MiniTest::Test
 
   def test_add_song_to_song_list
     @playlist_1.add_song(@song_1)
-    assert_equal([@song_1], @playlist.song_list)
+    assert_equal([@song_1], @playlist_1.song_list)
   end
 end
