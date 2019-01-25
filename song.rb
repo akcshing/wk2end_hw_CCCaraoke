@@ -1,9 +1,10 @@
 class Song
-  attr_reader :title
+  attr_reader :title, :artist
 
-  def initialize(title)
+  def initialize(title, artist)
     @title = title
     @intro = "#{title} intro..."  # what is returned from playing the song
+    @artist = artist
   end
 
   def play

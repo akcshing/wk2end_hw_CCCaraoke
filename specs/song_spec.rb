@@ -5,8 +5,8 @@ require_relative("../song")
 class TestSong < MiniTest::Test
 
   def setup
-    @song_1 = Song.new("Tongues")
-    @song_2 = Song.new("Mona Lisa")
+    @song_1 = Song.new("Tongues", "Joywave")
+    @song_2 = Song.new("Mona Lisa", "Lil Wayne, Kendrick Lamar")
 
   end
 
@@ -18,4 +18,5 @@ class TestSong < MiniTest::Test
   def test_play_song
     assert_equal("Tongues intro...", @song_1.play) #not just an attr reader, has to actually play the song
   end
+  
 end
