@@ -38,6 +38,7 @@ class TestRoom < MiniTest::Test
 
   def test_getters
     # assert_equal(@guests, @room_1.guests)
+    assert_equal("Room 2", @room_2.name)
     assert_equal(4, @room_2.size)
     assert_equal(@song_list, @room_2.song_list)
   end
@@ -48,18 +49,19 @@ class TestRoom < MiniTest::Test
 
   def test_check_in_guests
     @room_2.check_in(@guest_1)
-    @room_2.check_in(@guest_3)
+    assert_equal("Guest Michael has been checked into Room 2.", @room_2.check_in(@guest_3))
     assert_equal(2, @room_2.guests.count)
   end
 
   def test_check_in_guest__into_full_room
-    # @room_fill.check_in(@guest_1)
-    # @room_fill.check_in(@guest_2)
-    # @room_fill.check_in(@guest_3)
-    # @room_fill.check_in(@guest_4)
-    # @room_fill.check_in(@guest_5)
-    # assert_equal("Sorry, ")
+    @room_fill.check_in(@guest_1)
+    @room_fill.check_in(@guest_2)
+    @room_fill.check_in(@guest_3)
+    @room_fill.check_in(@guest_4)
 
+    assert_equal("Sorry, Room Fill is currently full.", @room_fill.check_in(@guest_5))
+    assert_equal(4, @room_fill.guests.count)
+    assert_equal(@guest_4, @room_fill.guests.last)
   end
 
   def test_check_out_guests
