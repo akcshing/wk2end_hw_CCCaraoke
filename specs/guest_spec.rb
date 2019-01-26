@@ -69,4 +69,6 @@ class TestGuest < MiniTest::Test
     assert_equal(false, @guest_2.pay_fee(@room.fee)) #pay fee should return false if not enough money
   end
 
+
+
 end

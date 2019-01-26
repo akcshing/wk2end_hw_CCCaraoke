@@ -34,6 +34,7 @@ class TestRoom < MiniTest::Test
 
     @room_2 = Room.new("Room 2", 4, @song_list, @playlist, 10)
     @room_fill = Room.new("Room Fill", 4, @song_list, @playlist, 10)
+    @room_expensive = Room.new("Deluxe Room", 8, @song_list, @playlist, 40)
   end
 
   def test_getters
@@ -77,9 +78,24 @@ class TestRoom < MiniTest::Test
     assert_equal(@song_1, @room_2.current_song)
   end
 
-  def test_pay_fee_at_check_in
-    @room_2.check_in(@guest_1)
+  def test_check_if_room_is_full
+    @room_fill.check_in(@guest_1)
+    @room_fill.check_in(@guest_2)
+    @room_fill.check_in(@guest_3)
+    @room_fill.check_in(@guest_4)
+
+    assert_equal(true, @room_fill.full?)
+  end
+
+
+
+  def test_pay_fee_at_check_in__not_enough_money
     #guest has to check if they have enough money for fee
+    assert_equal("Fee not paid, check in denied.", @room_expensive.check_in(@guest_1))
+  end
+
+  def test_room_accepts_fee_and_add_to_till
+
   end
 
 
