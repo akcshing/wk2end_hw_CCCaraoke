@@ -42,9 +42,3 @@ class Room
 
 
 end
-
-# def find_song(song_title, song_artist)
-#   song_title.capitalize
-#   song_artist.capitalize
-#   @song_list.find{|song| song.title == song_title && song.artist == song_artist}
-# end
