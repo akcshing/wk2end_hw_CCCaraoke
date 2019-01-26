@@ -18,10 +18,10 @@ class Guest
     @skills == true ? "La la laaaa..." : "Screeeeeech!..."
   end
 
-  def pay_fee(amount)
-    if @money > amount
-      @money -= amount
-      return amount
+  def pay_fee(fee)    # currently does 2 things, abstract
+    if @money >= fee
+      @money -= fee
+      return fee
     else
       return false
     end

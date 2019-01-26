@@ -28,19 +28,10 @@ class Room
     return "Sorry, #{@name} is currently full." if full? == true
     return "Fee not paid, check in denied." if guest.pay_fee(@fee) == false
 
+    @till += @fee           #guest.pay_fee(@fee)    # dont need to call method again
     @guests << guest
+    # binding.pry
     return "Guest #{guest.name} has been checked into #{@name}."
-    # -------------------------------------------------
-    # if full? == false       ### refactored
-    #   # if guest.pay_fee != false
-    #     @guests << guest
-    #     return "Guest #{guest.name} has been checked into #{@name}."
-    #   # else
-    #   #   return "Fee not paid, check in denied"
-    #   # end
-    # else
-    #   return "Sorry, #{@name} is currently full."
-    # end-----------------------------------------------
   end
 
   def check_out(guest)
