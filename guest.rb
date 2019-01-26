@@ -19,8 +19,12 @@ class Guest
   end
 
   def pay_fee(amount)
-    @money -= amount
-    return amount
+    if @money > amount
+      @money -= amount
+      return amount
+    else
+      return false
+    end
   end
 
 
