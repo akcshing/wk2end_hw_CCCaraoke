@@ -94,8 +94,10 @@ class TestRoom < MiniTest::Test
     assert_equal("Fee not paid, check in denied.", @room_expensive.check_in(@guest_1))
   end
 
-  def test_room_accepts_fee_and_add_to_till
-
+  def test_room_accepts_fee_from_guest_and_add_to_till
+    @room_2.check_in(@guest_1)
+    assert_equal(10, @room_2.till)
+    assert_equal(20, @guest_1.money)
   end
 
 

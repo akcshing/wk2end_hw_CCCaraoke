@@ -1,7 +1,7 @@
 require("pry")
 
 class Room
-  attr_reader :name, :guests, :size, :current_song, :song_list, :playlist, :fee
+  attr_reader :name, :guests, :size, :current_song, :song_list, :playlist, :fee, :till
 
   def initialize(name, size, song_list, playlist, fee)   # new playlist instance each room instance?
     @name = name
@@ -11,6 +11,7 @@ class Room
     @song_list = song_list # song_library instanced object
     @playlist = playlist
     @fee = fee
+    @till = 0
   end
 
 
