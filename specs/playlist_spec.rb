@@ -25,7 +25,7 @@ class TestPlaylist < MiniTest::Test
 
     @song_list = [@song_1, @song_2, @song_3, @song_4]
 
-    @room = Room.new(4, @song_list)
+    @room = Room.new("Test Room" 4, @song_list, @playlist)
     # @song_search = "Always", "blink-182"
   end
 

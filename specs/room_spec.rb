@@ -14,10 +14,13 @@ class TestRoom < MiniTest::Test
     @song_2 = Song.new("Place Your Hands", "Reef")
     @song_3 = Song.new("eez-eh", "Kasabian")
     @song_4 = Song.new("Always", "blink-182")
+    @song_5 = Song.new("Hotel California", "Eagles")
 
     @guest_1 = Guest.new("Alex", false, @song_1, 30)
     @guest_2 = Guest.new("Stacey", true, @song_2, 20)
     @guest_3 = Guest.new("Michael", false, @song_3, 40)
+    @guest_4 = Guest.new("James", false, @song_5, 50)
+    @guest_5 = Guest.new("Mart", true, @song_4, 50)
 
     @playlist = Playlist.new
     @playlist.add_song(@song_1)
@@ -26,11 +29,11 @@ class TestRoom < MiniTest::Test
 
     @song_list = Song_Library.new([@song_1, @song_2, @song_3, @song_4])
 
-    @guests = [@guest_1, @guest_2, @guest_3]
+    # @guests = [@guest_1, @guest_2, @guest_3]
     # @room_1 = Room.new(@guests, 6, @playlist, @song_list)  # removing guests parameter
 
-    @room_2 = Room.new(4, @song_list)
-
+    @room_2 = Room.new("Room 2", 4, @song_list, @playlist)
+    @room_fill = Room.new("Room Fill", 4, @song_list, @playlist)
   end
 
   def test_getters
@@ -49,6 +52,16 @@ class TestRoom < MiniTest::Test
     assert_equal(2, @room_2.guests.count)
   end
 
+  def test_check_in_guest__into_full_room
+    # @room_fill.check_in(@guest_1)
+    # @room_fill.check_in(@guest_2)
+    # @room_fill.check_in(@guest_3)
+    # @room_fill.check_in(@guest_4)
+    # @room_fill.check_in(@guest_5)
+    # assert_equal("Sorry, ")
+
+  end
+
   def test_check_out_guests
     @room_2.check_in(@guest_1)
     @room_2.check_in(@guest_3)
@@ -57,10 +70,12 @@ class TestRoom < MiniTest::Test
     assert_equal([@guest_3], @room_2.guests)
   end
 
-  def test_play_next_song_in_playlist
-    @room_2.play_next(@playlist)
+  def test_get_next_song_from_playlist
+    @room_2.play_next
     assert_equal(@song_1, @room_2.current_song)
   end
+
+
 
 
 end

@@ -1,17 +1,19 @@
 class Room
-  attr_reader :guests, :size, :current_song, :song_list
+  attr_reader :name, :guests, :size, :current_song, :song_list, :playlist
 
-  def initialize(size, song_list)
+  def initialize(name, size, song_list, playlist)   # new playlist instance each room instance?
+    @name = name
     @guests = []
     @size = size
     @current_song = current_song
     @song_list = song_list # song_library instanced object
+    @playlist = playlist
   end
 
 
 
-  def play_next(playlist)
-    @current_song = playlist.play_next
+  def play_next
+    @current_song = @playlist.play_next   #takes next song from playlist (removed from playlist) and passes it into room's current song
   end
 
   def check_in(guest)
