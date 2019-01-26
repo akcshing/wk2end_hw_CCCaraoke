@@ -32,8 +32,8 @@ class TestRoom < MiniTest::Test
     # @guests = [@guest_1, @guest_2, @guest_3]
     # @room_1 = Room.new(@guests, 6, @playlist, @song_list)  # removing guests parameter
 
-    @room_2 = Room.new("Room 2", 4, @song_list, @playlist)
-    @room_fill = Room.new("Room Fill", 4, @song_list, @playlist)
+    @room_2 = Room.new("Room 2", 4, @song_list, @playlist, 10)
+    @room_fill = Room.new("Room Fill", 4, @song_list, @playlist, 10)
   end
 
   def test_getters
@@ -77,7 +77,10 @@ class TestRoom < MiniTest::Test
     assert_equal(@song_1, @room_2.current_song)
   end
 
-
+  def test_pay_fee_at_check_in
+    @room_2.check_in(@guest_1)
+    #guest has to check if they have enough money for fee
+  end
 
 
 end

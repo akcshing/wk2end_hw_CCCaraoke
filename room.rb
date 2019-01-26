@@ -1,13 +1,14 @@
 class Room
-  attr_reader :name, :guests, :size, :current_song, :song_list, :playlist
+  attr_reader :name, :guests, :size, :current_song, :song_list, :playlist, :fee
 
-  def initialize(name, size, song_list, playlist)   # new playlist instance each room instance?
+  def initialize(name, size, song_list, playlist, fee)   # new playlist instance each room instance?
     @name = name
     @guests = []
     @size = size
     @current_song = current_song
     @song_list = song_list # song_library instanced object
     @playlist = playlist
+    @fee = fee
   end
 
 
